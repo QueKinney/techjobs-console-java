@@ -11,7 +11,7 @@ public class TechJobs {
 
     private static Scanner in = new Scanner(System.in);
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
@@ -103,14 +103,21 @@ public class TechJobs {
                 validChoice = true;
             }
 
-        } while(!validChoice);
+        } while (!validChoice);
 
         return choiceKeys[choiceIdx];
     }
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-
-        System.out.println("printJobs is not implemented yet");
+        for (HashMap<String, String> job : someJobs) {
+            System.out.print("****" +
+                    "\n Position Type:" + job.get("position type") +
+                            "\n Name: " + job.get("name") +
+                            "\n Employer:" + job.get("employer") +
+                            "\n Location: " + job.get("location") +
+                            "\n Core Competency: " + job.get(" core competency")
+            + "\n *****");
+        }
     }
 }
