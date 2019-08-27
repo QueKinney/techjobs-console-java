@@ -83,14 +83,14 @@ public class JobData {
 
         return jobs;
     }
-    public static ArrayList<HashMap<String, String>>findByValue (String Value){
+    public static ArrayList<HashMap<String, String>>findByValue(String Value){
     loadData();
 
     ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> job : allJobs) {
         for(String key : job.keySet()) {
-            if (job.get(key).contains(Value)) {
+            if (job.get(key).toLowerCase().contains(Value.toLowerCase())) {
                 jobs.add(job);
                 break;
             }
